@@ -55,6 +55,15 @@
     font-weight: 600;
     color: #e9ecef;
     cursor: pointer;
+    transition: color 0.3s ease 0s;
+    @media (hover: hover) {
+      &:hover {
+        color: #bdc6cf;
+        .category__arrow {
+          transform: rotate(-180deg);
+        }
+      }
+    }
   }
   // .category__arrow
   &__arrow {
@@ -62,6 +71,7 @@
     height: 15px;
     margin: 0px 0px 0px 5px;
     object-fit: cover;
+    transition: transform 0.2s ease 0s;
   }
   // .category__submenu
   &__submenu {
