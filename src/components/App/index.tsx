@@ -1,11 +1,40 @@
-/* eslint-disable jsx-a11y/heading-has-content */
+/* eslint-disable no-plusplus */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import ArrowDown from '../../assets/images/arrow-down.svg';
-import Svg2 from '../../assets/images/browser.svg';
-import Image from '../../assets/images/test.jpg';
-import Svg1 from '../../assets/images/windows.svg';
+import useTypesSelector from '../../hooks/useTypesSelector';
+import { fetchGames } from '../../store/actions/games';
+import ItemGame from '../ItemGame';
 
 const App = () => {
+  const dispatch = useDispatch();
+  const [listOfGames, gamesCount, pageSize, currentPage, isLoaded] =
+    useTypesSelector(({ games }) => [
+      games.listOfGames,
+      games.gamesCount,
+      games.pageSize,
+      games.currentPage,
+      games.isLoaded,
+    ]);
+
+  const pages = [];
+  const totalPages = Math.ceil(gamesCount / pageSize);
+
+  for (
+    let i = Math.max(currentPage - 4, 1);
+    i <= Math.max(1, Math.min(currentPage + 4, totalPages));
+    i++
+  ) {
+    pages.push(i);
+  }
+
+  useEffect(() => {
+    dispatch(fetchGames());
+  }, [dispatch]);
+
   return (
     <main className='page'>
       <div className='page__games games'>
@@ -58,43 +87,22 @@ const App = () => {
           </div>
           <div className='games__content'>
             <div className='games__items'>
-              <article className='games__item item-game'>
-                <a href='#' className='item-game__picture'>
-                  <img src={Image} alt='' />
-                </a>
-                <div className='item-game__content'>
-                  <a href='#' className='item-game__title-link'>
-                    <h2 className='item-game__title'>
-                      Phantasy Star Online 2 New Genesis
-                    </h2>
-                    <div className='item-game__label item-label item-label--free'>
-                      <span className='item-label__text'>Free</span>
-                    </div>
-                  </a>
-                  <p className='item-game__text'>
-                    The legacy of Phantasy Star Online 2 continues a thousand
-                    years later!
-                  </p>
-                  <div className='item-game__bottom'>
-                    <div className='item-game__icons'>
-                      <img src={Svg1} alt='' />
-                      <img src={Svg2} alt='' />
-                    </div>
-                    <div className='item-game__genre'>
-                      <p className='item-game__genre-name'>MMORPG</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
+              {listOfGames &&
+                listOfGames.map((obj, i) => (
+                  <ItemGame key={`${obj.id}: ${i}`} {...obj} />
+                ))}
             </div>
           </div>
           <div className='games__pagination pagination'>
             <ul className='pagination__list'>
-              <li className='pagination__item'>
-                <a href='#' className='pagination__link'>
-                  1
-                </a>
-              </li>
+              {pages &&
+                pages.map((page) => (
+                  <li key={page} className='pagination__item'>
+                    <a href='#' className='pagination__link'>
+                      {page}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
