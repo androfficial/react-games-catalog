@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-/* eslint-disable jsx-a11y/heading-has-content */
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
+import { Link } from 'react-router-dom';
 
 import BrowserSvg from '../../assets/images/browser.svg';
 import WindowsSvg from '../../assets/images/windows.svg';
@@ -16,16 +16,16 @@ const ItemGame = ({
 }: IGame) => {
   return (
     <article className='games__item item-game'>
-      <a href='#' className='item-game__picture'>
+      <Link to={String(id)} className='item-game__picture'>
         <img src={thumbnail} alt={title} />
-      </a>
+      </Link>
       <div className='item-game__content'>
-        <a href='#' className='item-game__title-link'>
+        <Link to={String(id)} className='item-game__title-link'>
           <h2 className='item-game__title'>{title}</h2>
           <div className='item-game__label item-label item-label--free'>
             <span className='item-label__text'>Free</span>
           </div>
-        </a>
+        </Link>
         <p className='item-game__text'>{short_description}</p>
         <div className='item-game__bottom'>
           <div className='item-game__icons'>
