@@ -8,6 +8,11 @@ export const setGames = (payload: IGame[]): TGamesAction => ({
   payload,
 });
 
+export const setCurrentPage = (payload = 1): TGamesAction => ({
+  type: Types.SET_CURRENT_PAGE,
+  payload,
+});
+
 export const setIsLoaded = (payload: boolean): TGamesAction => ({
   type: Types.SET_IS_LOADED,
   payload,

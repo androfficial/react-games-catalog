@@ -4,7 +4,7 @@ import { IGame, TGamesAction, Types } from '../../types/games';
 const initialState = {
   listOfGames: [] as IGame[],
   gamesCount: null as unknown as number,
-  pageSize: 9,
+  pageSize: 12,
   currentPage: 1,
   isLoaded: false,
   errorApi: false,
@@ -27,6 +27,11 @@ const games = (
       return {
         ...state,
         isLoaded: action.payload,
+      };
+    case Types.SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
       };
     case Types.SET_ERROR_API:
       return {
