@@ -1,4 +1,5 @@
 /* eslint-disable default-param-last */
+
 import { IGame, TGamesAction, Types } from '../../types/games';
 
 const initialState = {
