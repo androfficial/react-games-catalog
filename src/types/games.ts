@@ -1,5 +1,3 @@
-import React from 'react';
-
 export enum Types {
   SET_GAMES = 'GAMES@SET:GAMES',
   SET_IS_LOADED = 'GAMES@SET:IS_LOADED',

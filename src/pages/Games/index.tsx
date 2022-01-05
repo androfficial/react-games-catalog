@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 import ArrowDown from '../../assets/images/arrow-down.svg';
-import { ItemGame, Pagination } from '../../components';
+import { ItemGame, Pagination, Skeleton } from '../../components';
 import useTypesSelector from '../../hooks/useTypesSelector';
 import {
   fetchGames,
@@ -97,10 +97,13 @@ const Games = () => {
         </div>
         <div className='games__content'>
           <div className='games__items'>
-            {displayGap &&
-              displayGap.map((obj, i) => (
-                <ItemGame key={`${obj.id}: ${i}`} {...obj} />
-              ))}
+            {isLoaded
+              ? displayGap.map((obj, i) => (
+                  <ItemGame key={`${obj.id}: ${i}`} {...obj} />
+                ))
+              : Array(12)
+                  .fill(0)
+                  .map((_, i) => <Skeleton key={i} />)}
           </div>
         </div>
         <Pagination
