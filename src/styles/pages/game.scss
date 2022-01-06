@@ -1,0 +1,195 @@
+.game {
+  // .game__background
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 608px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    opacity: 0.5;
+    &::after {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: linear-gradient(
+          90deg,
+          #292e33 0%,
+          rgba(35, 46, 46, 0.1) 16.15%,
+          rgba(35, 46, 46, 0.1) 80.21%,
+          #292e33 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgb(39, 43, 48) 0%,
+          rgba(0, 0, 0, 0.58) 33.85%,
+          #292e33 100%
+        );
+    }
+  }
+  // .game__container
+  &__container {
+  }
+  // .game__wrapper
+  &__wrapper {
+    display: flex;
+  }
+  // .game__aside
+  &__aside {
+    flex: 0 0 365px;
+    margin: 0px 20px 0px 0px;
+  }
+  // .game__content
+  &__content {
+    flex: 1 1 auto;
+  }
+}
+.aside-game {
+  // .aside-game__box
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+  // .aside-game__picture
+  &__picture {
+    position: relative;
+    padding: 0px 0px 206px / 365px * 100% 0px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+  // .aside-game__body
+  &__body {
+    margin: 16px 0px 0px 0px;
+  }
+  // .aside-game__btns
+  &__btns {
+    display: flex;
+    align-items: flex-start;
+    margin: 0px 0px 16px 0px;
+  }
+  // .aside-game__btn
+  &__btn {
+    height: 48.5px;
+    font-weight: 400;
+    color: #aaa;
+    text-transform: uppercase;
+    background-color: #32383e;
+    border-color: #32383e;
+    border-radius: 4px;
+  }
+  // .aside-game__btn--label
+  &__btn--label {
+    flex: 0 0 65px;
+    margin: 0px 8px 0px 0px;
+    @media (hover: hover) {
+      &:hover {
+        color: #fff;
+        background-color: #3a3f44;
+        border-color: #3a3f44;
+      }
+    }
+  }
+  // .aside-game__btn--play-now
+  &__btn--play-now {
+    flex: 1 1 auto;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    background-color: #4799eb;
+    border-color: #4799eb;
+    &::after {
+      position: relative;
+      top: 0.2px;
+      display: inline-flex;
+      flex: 0 0 15px;
+      width: 15px;
+      height: 15px;
+      margin: 0px 0px 0px 3px;
+      content: '';
+      background-image: url('../../assets/images/enter.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: #367cc2;
+        border-color: #367cc2;
+      }
+    }
+  }
+  // .aside-game__stats
+  &__stats {
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 0.125rem 0.25rem rgba(#000, 0.075);
+  }
+  // .aside-game__stats-wrapper
+  &__stats-wrapper {
+    display: flex;
+    flex: 0 0 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 25%;
+    height: 82.5px;
+    padding: 8px 10px;
+    background-color: #32383e;
+    border-color: #32383e;
+    transition: background-color 0.3s ease 0s;
+    img {
+      display: inline-flex;
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      object-fit: cover;
+      margin: 0px 0px 2px 0px;
+    }
+    &:last-child img {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      margin: 0px 0px 3.5px 0px;
+    }
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: #3a3f44;
+        border-color: #3a3f44;
+      }
+    }
+  }
+  // .aside-game__stats-count
+  &__stats-count {
+    font-size: 15px;
+    color: #7a8288;
+  }
+  // .aside-game__text
+  &__text {
+    font-size: 13px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}

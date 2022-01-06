@@ -1,0 +1,14 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  padding: 0 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  user-select: none;
+  border: 1px solid transparent;
+  transition: color 0.3s ease 0s, background-color 0.3s ease 0s,
+    border-color 0.3s ease 0s;
+}
