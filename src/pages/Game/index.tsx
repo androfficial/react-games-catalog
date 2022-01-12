@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { Plus, SmileFun, SmileMeh, SmileSad } from '../../assets/images/intex';
+import { Plus, SmileFun, SmileMeh, SmileSad } from '../../assets/images/index';
 import useTypesSelector from '../../hooks/useTypesSelector';
 import { fetchGame, setIsLoaded } from '../../store/actions/game';
 
