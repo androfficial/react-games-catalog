@@ -15,13 +15,13 @@ const Pagination = ({ gamesCount, pageSize, currentPage }: IPagination) => {
   }
 
   const onHandlePage = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    e: React.MouseEvent<HTMLAnchorElement>,
     page: number
   ) => {
     e.preventDefault();
 
     if (currentPage !== page) {
-      navigate(`/?page=${page}`);
+      navigate(`/games/?page=${page}`);
     }
   };
 
@@ -32,7 +32,7 @@ const Pagination = ({ gamesCount, pageSize, currentPage }: IPagination) => {
           pages.map((page) => (
             <li key={page} className='pagination__item'>
               <Link
-                to={`/?page=${page}`}
+                to={`/games/?page=${page}`}
                 onClick={(e) => onHandlePage(e, page)}
                 className={cn(
                   'pagination__link',
