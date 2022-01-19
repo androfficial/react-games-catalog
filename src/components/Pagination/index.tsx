@@ -10,7 +10,11 @@ const Pagination = ({ gamesCount, pageSize, currentPage }: IPagination) => {
 
   const totalPages = Math.ceil(gamesCount / pageSize);
 
-  for (let i = 1; i <= totalPages; i++) {
+  for (
+    let i = Math.max(currentPage - 4, 1);
+    i <= Math.max(1, Math.min(currentPage + 4, totalPages));
+    i++
+  ) {
     pages.push(i);
   }
 
