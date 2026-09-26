@@ -2,17 +2,13 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 @use 'sass:math';
 
-// === <ПЕРЕМЕННЫЕ> ===================================================
 $maxWidthContainer: 1054;
 $maxWidth: 1920;
 
-// === <МИКСИНЫ> ======================================================
 @import 'mixins/mixins';
 
-// === <ШРИФТЫ ЛОКАЛЬНЫЕ> =============================================
 @import 'blocks/fonts';
 
-// === <ОБНУЛЕНИЕ> ====================================================
 @import 'blocks/null';
 
 body {
@@ -26,7 +22,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-//<ОБОЛОЧКА>============================================================
 #root {
   display: flex;
   flex-direction: column;
@@ -34,22 +29,18 @@ body {
   height: 100%;
 }
 
-// === <КОНТЕЙНЕР> =====================================================
 ._container {
   max-width: 1054px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
-// <ПОДКЛЮЧЕНИЕ ГОТОВЫХ КЛАССОВ>========================================
 @import 'blocks/ui';
 
-// === <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ> =================
 @import 'pages/games';
 @import 'pages/game';
 @import 'pages/not-found';
 
-// === <ОСНОВНОЙ БЛОК> =================================================
 .page {
   display: flex;
   flex: 1 1 auto;

@@ -4,9 +4,9 @@ const NotFound = () => {
   return (
     <div className='not-found'>
       <p className='not-found__text'>
-        <strong>Ошибка:</strong>Невозможно показать запрашиваемую страницу.
+        <strong>Error:</strong>Unable to display the requested page.
         <br />
-        Пожалуйста, попробуйте еще раз позже.
+        Please try again later.
       </p>
       <Link to='/games' className='not-found__link btn'>
         Games Catalog
