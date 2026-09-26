@@ -1,9 +1,5 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://free-to-play-games-database.p.rapidapi.com/api/',
-  headers: {
-    'x-rapidapi-host': process.env.REACT_APP_RAPIDAPI_HOST as string,
-    'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY as string,
-  },
+  baseURL: 'https://www.freetogame.com/api/',
 });
